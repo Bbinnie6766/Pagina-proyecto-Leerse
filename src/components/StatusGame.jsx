@@ -17,6 +17,13 @@ export const StatusGame = () => {
         <button>Vida 2</button>
         <button>Vida 3</button>
       </div>
+      
+      <div className="vcharacters">
+        <h1>🚀 character: _____</h1>
+        <button>character 1</button>
+        <button>character 2</button>
+        <button>character 3</button>
+      </div>
     </>
   )
 }
