@@ -22,7 +22,7 @@ export const StatusGame = () => {
       </div>
       
       <div className="vcharacters">
-        <h1>🚀 character: {characters}</h1>
+        <h1 style={{color: "blue"}}>🚀 character: {characters}</h1>
         <button onClick={() => setCharacters(prev => prev + 1)}>R2D2</button>
         <button onClick={() => setCharacters(prev => prev + 3)}>Doc Emmet Brown</button>
         <button onClick={() => setCharacters(prev => prev + 2)}>Pikachu</button>
