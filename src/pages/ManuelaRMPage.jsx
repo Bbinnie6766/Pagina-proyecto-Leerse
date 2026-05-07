@@ -32,7 +32,7 @@ export const ManuelaRMPage = () => {
             </ul>
 
             <div className=''>
-                <div className="card" style="width: 18rem;">
+                <div className="card" style={{width: "18rem"}}>
                     <img src=".../" class="card-img-top" alt=""/>
                         <div class="card-body">
                             <h5 className="card-title">Card title</h5>
