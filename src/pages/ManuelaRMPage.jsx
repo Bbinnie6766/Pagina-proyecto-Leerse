@@ -19,29 +19,40 @@ export const ManuelaRMPage = () => {
         return () => { }
     }, [])
 
+    const [pokemons, setPokemons] = useState([])
+
+    const getPokemons = async () => {
+        const res = await fetch("https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20")
+        const data = await res.json()
+
+        setPokemons(data.results)
+
+        console.log(data)
+    }
+
+    useEffect(() => {
+        getPokemons()
+
+        return () => { }
+    }, [])
+
 
     return (
         <>
             <h1>Personajes de Rick and Morty</h1>
-            <ul>
-                {characters.map((char, index) => (
-                    <li key={index}>
-                        <p>{char.name}</p>
-                    </li>
-                ))}
-            </ul>
 
-            <div className=''>
-                <div className="card" style={{width: "18rem"}}>
-                    <img src=".../" class="card-img-top" alt=""/>
-                        <div class="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+            {characters.map((char, index) => (
+                <div className='card'>
+                    <div key={index} className="card" style={{ width: "18rem" }}>
+                        <img src={char.image} className="card-img-top" alt="" />
+                        <div className="card-body">
+                            <h5 className="card-title">{char.name}</h5>
+                            <p className="card-text">Status: {char.status}</p>
+                            <p className="card-text">Especies: {char.species}</p>
                         </div>
+                    </div>
                 </div>
-            </div>
-
+            ))}
         </>
     )
 
