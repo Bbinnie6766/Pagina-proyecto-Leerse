@@ -1,11 +1,11 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 
 export const ManuelaRMPage = () => {
 
     const [characters, setCharacters] = useState([])
 
     const getCharacters = async () => {
-        const res = await fetch ("https://rickandmortyapi.com/api/character")
+        const res = await fetch("https://rickandmortyapi.com/api/character")
         const data = await res.json()
 
         setCharacters(data.results)
@@ -14,24 +14,36 @@ export const ManuelaRMPage = () => {
     }
 
     useEffect(() => {
-      getCharacters ()
-    
-      return () => { }
+        getCharacters()
+
+        return () => { }
     }, [])
-    
-  
+
+
     return (
-    <>
-    <h1>Personajes de Rick and Morty</h1>
-    <ul>
-        {characters.map( (char, index) => (
-            <li key={index}>
-                <p>{char.name}</p>
-            </li>
-        ) )}
-    </ul>
-    </>
-  )
+        <>
+            <h1>Personajes de Rick and Morty</h1>
+            <ul>
+                {characters.map((char, index) => (
+                    <li key={index}>
+                        <p>{char.name}</p>
+                    </li>
+                ))}
+            </ul>
+
+            <div className=''>
+                <div className="card" style="width: 18rem;">
+                    <img src=".../" class="card-img-top" alt=""/>
+                        <div class="card-body">
+                            <h5 className="card-title">Card title</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                </div>
+            </div>
+
+        </>
+    )
 
 }
 
