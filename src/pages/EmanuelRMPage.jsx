@@ -15,10 +15,25 @@ export const EmanuelRMPage = () => {
     }
 
     const getPokemons = async () => {
-        const res = await fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+        const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=12")
         const data = await res.json()
 
-        setPokemons(data.results)
+        const detailsPokemon = await Promise.all(
+
+            data.results.map(async (pokemon) => {
+                
+                const res = await fetch(pokemon.url)    
+                const details = await res.json()
+                return {
+                    id: details.id,
+                    name: details.name,
+                    image: details.sprites.other["official-artwork"].front_default,
+                    type: details.types[0].type.name
+                }
+
+            }))
+
+        setPokemons(detailsPokemon)
         console.log(data)
 
     }
@@ -44,6 +59,17 @@ export const EmanuelRMPage = () => {
                 </div>
             ))}
 
+            <h2>Tarjetas pokemon  {/* Emanuel */}</h2>
+
+            {pokemons.map((poke, index) => (
+                <div key={poke.id} className="card" style={{ width: "18rem" }}>
+                    <img src={poke.image} className="card-img-top" alt={poke.name}       />
+                    <div className="card-body">
+                        <h5 className="card-title">{poke.name}</h5>
+                        <p className="card-text">species: {poke.type}</p>
+                    </div>
+                </div>
+            ))}
 
 
 
