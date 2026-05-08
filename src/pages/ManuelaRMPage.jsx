@@ -19,13 +19,31 @@ export const ManuelaRMPage = () => {
         return () => { }
     }, [])
 
+
+
     const [pokemons, setPokemons] = useState([])
 
     const getPokemons = async () => {
-        const res = await fetch("https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20")
+        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=12')
         const data = await res.json()
 
-        setPokemons(data.results)
+        const detallesPokemon = await Promise.all(
+
+            data.results.map(async (pokemons) => {
+
+                const res = await fetch(pokemons.url)
+                const detalles = await res.json()
+
+                return {
+                    id: detalles.id,
+                    name: detalles.name,
+                    image: detalles.sprites.other["official-artwork"].front_default,
+                    types: detalles.types[0].type.name
+                }
+            })
+        )
+
+        setPokemons(detallesPokemon)
 
         console.log(data)
     }
@@ -42,14 +60,27 @@ export const ManuelaRMPage = () => {
             <h1>Personajes de Rick and Morty</h1>
 
             {characters.map((char, index) => (
-                <div className='card'>
-                    <div key={index} className="card" style={{ width: "18rem" }}>
-                        <img src={char.image} className="card-img-top" alt="" />
-                        <div className="card-body">
-                            <h5 className="card-title">{char.name}</h5>
-                            <p className="card-text">Status: {char.status}</p>
-                            <p className="card-text">Especies: {char.species}</p>
-                        </div>
+
+                <div key={index} className="card" style={{ width: "18rem" }}>
+                    <img src={char.image} className="card-img-top" alt="" />
+                    <div className="card-body">
+                        <h5 className="card-title">{char.name}</h5>
+                        <p className="card-text">Status: {char.status}</p>
+                        <p className="card-text">Especies: {char.species}</p>
+                    </div>
+                </div>
+
+            ))}
+
+            <h1>Pokémons Manuela </h1>
+
+            {pokemons.map((poke, index) => (
+                <div key={poke.id} className="card" style={{ width: "18rem" }}>
+                    <img src={poke.image} className="card-img-top" alt="" />
+                    <div className="card-body">
+                        <h5 className="card-title">{poke.name}</h5>
+                        <p className="card-text">Tipo: {poke.types}</p>
+                        <p className="card-text">species: {poke.species}</p>
                     </div>
                 </div>
             ))}
