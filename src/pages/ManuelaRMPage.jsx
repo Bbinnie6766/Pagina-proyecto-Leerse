@@ -39,6 +39,7 @@ export const ManuelaRMPage = () => {
                     name: detalles.name,
                     image: detalles.sprites.other["official-artwork"].front_default,
                     types: detalles.types[0].type.name
+
                 }
             })
         )
@@ -57,33 +58,39 @@ export const ManuelaRMPage = () => {
 
     return (
         <>
-            <h1>Personajes de Rick and Morty</h1>
+            <h1 className='text-center' >Personajes de Rick and Morty</h1>
 
-            {characters.map((char, index) => (
+            <div className='d-flex flex-wrap justify-content-center gap-3 m-5' style={{backgroundColor: '#1e3b7a9d'}}>
 
-                <div key={index} className="card" style={{ width: "18rem" }}>
-                    <img src={char.image} className="card-img-top" alt="" />
-                    <div className="card-body">
-                        <h5 className="card-title">{char.name}</h5>
-                        <p className="card-text">Status: {char.status}</p>
-                        <p className="card-text">Especies: {char.species}</p>
+                {characters.map((char, index) => (
+
+                    <div key={index} className="card" style={{ width: "18rem" }}>
+                        <img src={char.image} className="card-img-top" alt="" />
+                        <div className="card-body">
+                            <h5 className="card-title">{char.name}</h5>
+                            <p className="card-text">Status: {char.status}</p>
+                            <p className="card-text">Especies: {char.species}</p>
+                        </div>
                     </div>
-                </div>
 
-            ))}
+                ))}
 
-            <h1>Pokémons Manuela </h1>
+            </div>
 
-            {pokemons.map((poke, index) => (
-                <div key={poke.id} className="card" style={{ width: "18rem" }}>
-                    <img src={poke.image} className="card-img-top" alt="" />
-                    <div className="card-body">
-                        <h5 className="card-title">{poke.name}</h5>
-                        <p className="card-text">Tipo: {poke.types}</p>
-                        <p className="card-text">species: {poke.species}</p>
+
+            <h1 className='text-center'>Pokémons Manuela </h1>
+            <div className='d-flex flex-wrap justify-content-center gap-3 m-5' style={{backgroundColor: '#1272269d'}}>
+
+                {pokemons.map((poke, index) => (
+                    <div key={poke.id} className="card" style={{ width: "18rem" }}>
+                        <img src={poke.image} className="card-img-top" alt="" />
+                        <div className="card-body">
+                            <h5 className="card-title">{poke.name}</h5>
+                            <p className="card-text">Tipo: {poke.types}</p>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </>
     )
 
