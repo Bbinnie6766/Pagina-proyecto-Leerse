@@ -21,8 +21,8 @@ export const EmanuelRMPage = () => {
         const detailsPokemon = await Promise.all(
 
             data.results.map(async (pokemon) => {
-                
-                const res = await fetch(pokemon.url)    
+
+                const res = await fetch(pokemon.url)
                 const details = await res.json()
                 return {
                     id: details.id,
@@ -46,33 +46,36 @@ export const EmanuelRMPage = () => {
 
     return (
         <>
-            <h1>Personajes de Rick and Morty</h1>
+            <div className="d-flex flex-column justify-content-center align-items-center">
+                <h1>Personajes de Rick and Morty</h1>
 
-            {characters.map((char, index) => (
-                <div key={index} className="card" style={{ width: "18rem" }}>
-                    <img src={char.image} className="card-img-top" alt={char.name} />
-                    <div className="card-body">
-                        <h5 className="card-title">{char.name}</h5>
-                        <p className="card-text">status: {char.status}</p>
-                        <p className="card-text">species: {char.species}</p>
-                    </div>
+                <div className="m-5 row row-cols-4 gap-4 justify-content-center">
+                    {characters.map((char, index) => (
+                        <div key={index} className="card col" style={{ width: "18rem" }}>
+                            <img src={char.image} className="card-img-top" alt={char.name} />
+                            <div className="card-body">
+                                <h5 className="card-title">{char.name}</h5>
+                                <p className="card-text">status: {char.status}</p>
+                                <p className="card-text">species: {char.species}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
 
-            <h2>Tarjetas pokemon  {/* Emanuel */}</h2>
+                <h2>Tarjetas pokemon  {/* Emanuel */}</h2>
 
-            {pokemons.map((poke, index) => (
-                <div key={poke.id} className="card" style={{ width: "18rem" }}>
-                    <img src={poke.image} className="card-img-top" alt={poke.name}       />
-                    <div className="card-body">
-                        <h5 className="card-title">{poke.name}</h5>
-                        <p className="card-text">species: {poke.type}</p>
-                    </div>
+                <div className="m-5 row row-cols-4 gap-4 justify-content-center">
+                    {pokemons.map((poke, index) => (
+                        <div key={poke.id} className="card col" style={{ width: "18rem" }}>
+                            <img src={poke.image} className="card-img-top " alt={poke.name} />
+                            <div className="card-body">
+                                <h5 className="card-title">{poke.name}</h5>
+                                <p className="card-text">type: {poke.type}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-
-
-
+            </div>
         </>
     )
 }
