@@ -1,11 +1,74 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 .animation-container {
-   width: 90vw;
-   height: 100vh;
-   background-color: aqua;
-}
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+
+    .animation-content {
+        width: 80%;
+        height: 90%;
+        background-color: white;
+
+        .banner {
+            width: 10%;
+            height: 80%;
+
+            .logo-container {
+                background-color: #e0d0ec;
+            }
+
+            .user-container {
+                background-color: hsla(356, 96%, 31%, 0.20)
+            }
+
+            .links-container {
+                background-color: #526b2d;
+            }
+        }
+
+        .content {
+            width: 90%;
+            height: 95%;
+            
+
+            .progress-container {
+                width: 100%;
+                
+                .progress {
+
+                    width: 100%;
+                    height: 0.8rem;
+                    background-color: #ebc9fa;
+
+                        .progress-bar {
+                            background-color: #9C030E;
+                        }
+
+                }
+
+                .containerNum {
+                    width: 35px;
+                    height: 35px;
+                    background-color: #ebc9fa;
+                }
+            }
+
+            .reproductor {
+                width: 100%;
+                height: 75%;
+                background-color: #ebc9fa;
+            }
+
+            .sinopsis {
+                width: 100%;
+                height: 23%;
+                background-color: #8c030e;
+            }
+        }
+    }
