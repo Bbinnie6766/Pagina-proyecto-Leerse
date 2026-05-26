@@ -6,8 +6,8 @@ export const Tutorial = () => {
         <>
             <div className="tutorial-container d-flex justify-content-center align-items-center">
 
-                <div className="card" role="alert" aria-live="assertive" aria-atomic="true" 
-                style={{ width: '100%', maxWidth: '420px', border: '24px solid #e0d0ec', borderRadius: '14px' }}>
+                <div className="card" role="alert" aria-live="assertive" aria-atomic="true"
+                    style={{ width: '100%', maxWidth: '420px', border: '24px solid #e0d0ec', borderRadius: '14px' }}>
 
                     <div className="card-body p-4">
 
@@ -31,6 +31,7 @@ export const Tutorial = () => {
 
             </div>
 
+
             <div className='tutorial-container d-flex justify-content-center align-items-center'>
 
                 <div class="card" role="alert" aria-live="assertive" aria-atomic="true" style={{ width: '100%', maxWidth: '420px', border: '24px solid #e0d0ec', borderRadius: '14px' }}>
@@ -45,6 +46,41 @@ export const Tutorial = () => {
 
                     </div>
 
+                </div>
+            </div>
+
+            {/* Tarjeta 2 - Decisiones */}
+            <div className="tutorial-container d-flex justify-content-center align-items-center">
+                <div
+                    className="card"
+                    style={{ width: '100%', maxWidth: '420px', border: '24px solid #e0d0ec', borderRadius: '14px' }}>
+                    <div className="card-body p-4">
+
+                        <div className="d-flex align-items-center gap-2 mb-1">
+                            <img src="check.png" style={{ width: '45px', height: '45px' }} />
+                            <span className="fw-bold" style={{ color: '#000000', fontSize: '0.95rem' }}>Desición 1</span>
+                        </div>
+                        <p style={{ fontSize: '0.82rem', color: '#000000', lineHeight: '1.65' }}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+
+                        <div className="d-flex align-items-center gap-2 mb-1 mt-3">
+                            <img src="check.png" style={{ width: '45px', height: '45px' }} />
+                            <span className="fw-bold" style={{ color: '#000000', fontSize: '0.95rem' }}>Desición 2</span>
+                        </div>
+                        <p style={{ fontSize: '0.82rem', color: '#000000', lineHeight: '1.65' }}>
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+
+                        <div className="d-flex align-items-center gap-2 mb-1 mt-3">
+                            <img src="check.png" style={{ width: '45px', height: '45px' }} />
+                            <span className="fw-bold" style={{ color: '#000000', fontSize: '0.95rem' }}>Desición 3</span>
+                        </div>
+                        <p style={{ fontSize: '0.82rem', color: '#000000', lineHeight: '1.65', margin: 0 }}>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+
+                    </div>
                 </div>
             </div>
 
