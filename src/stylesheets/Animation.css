@@ -35,20 +35,20 @@
         .content {
             width: 90%;
             height: 95%;
-            
+
 
             .progress-container {
                 width: 100%;
-                
+
                 .progress {
 
                     width: 100%;
                     height: 0.8rem;
                     background-color: #ebc9fa;
 
-                        .progress-bar {
-                            background-color: #9C030E;
-                        }
+                    .progress-bar {
+                        background-color: #9C030E;
+                    }
 
                 }
 
@@ -63,6 +63,28 @@
                 width: 100%;
                 height: 75%;
                 background-color: #ebc9fa;
+                padding: 2%;
+
+                .video-container {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #9c6f73;
+
+                    .herramientas {
+                        width: 70px;
+                        height: 70px;
+                        background-color: #ebc9fa;
+                        border: #526b2d solid 4px;
+                    }
+
+                    .diario {
+                        width: 70px;
+                        height: 70px;
+                        background-color: #8c030e;
+                    }
+
+                }
+
             }
 
             .sinopsis {
@@ -72,4 +94,4 @@
             }
         }
     }
-    
+}

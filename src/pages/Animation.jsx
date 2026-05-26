@@ -1,5 +1,6 @@
 import React from 'react'
 import "../stylesheets/Animation.css"
+import { Notificacion } from '../components/Notificacion'
 
 export const Animation = () => {
     return (
@@ -48,10 +49,19 @@ export const Animation = () => {
                         </div>
 
                         <div className="reproductor d-flex align-items-center justify-content-center rounded-4 mt-2">
-
+                            <div className="video-container d-flex align-items-center justify-content-center rounded-4 position-relative">
+                                <img src="/iconos/icono-play.png" style={{ width: '100px' }} />
+                                <Notificacion></Notificacion>
+                                <div className='herramientas position-absolute bottom-0 start-0 d-flex align-items-center justify-content-center rounded-4'>
+                                        <img src="/iconos/icono-herramientas.png" style={{ width: '65px' }} />
+                                </div>
+                                <div className='diario position-absolute bottom-0 end-0 d-flex align-items-center justify-content-center rounded-4'>
+                                        <img src="/iconos/icono-diario.png" style={{ width: '65px' }} />
+                                </div>
+                            </div>
                         </div>
                         <div className="sinopsis d-flex align-items-center justify-content-center rounded-4">
-
+<p>lol lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate!</p>
                         </div>
                     </div>
                 </div>
