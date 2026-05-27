@@ -34,14 +34,14 @@ export const Tutorial = () => {
 
             <div className='tutorial-container d-flex justify-content-center align-items-center'>
 
-                <div class="card" role="alert" aria-live="assertive" aria-atomic="true" style={{ width: '100%', maxWidth: '420px', border: '24px solid #e0d0ec', borderRadius: '14px' }}>
+                <div className="card" role="alert" aria-live="assertive" aria-atomic="true" style={{ width: '100%', maxWidth: '420px', border: '24px solid #e0d0ec', borderRadius: '14px' }}>
 
-                    <div class="card-body p-4">
+                    <div className="card-body p-4">
                         Hello, world! This is a toast message.
 
-                        <div class="mt-2 pt-2 border-top ">
-                            <button type="button" class="btn btn-primary btn-sm">Take action</button>
-                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+                        <div className="mt-2 pt-2 border-top ">
+                            <button type="button" className="btn btn-primary btn-sm">Take action</button>
+                            <button type="button" className="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
                         </div>
 
                     </div>

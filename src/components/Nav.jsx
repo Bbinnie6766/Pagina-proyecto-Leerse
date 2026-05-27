@@ -1,9 +1,45 @@
 import "../stylesheets/Nav.css"
+import { motion } from "motion/react"
+import { useEffect, useState } from "react"
 
 export const Nav = ({ onProblemaClick, onAcercadeClick, onAnimacionClick, onBeneficiosClick, onComunidadClick }) => {
+
+    const [showNav, setShowNav] = useState(true)
+
+    useEffect(() => {
+
+        const handleMouseMove = (e) => {
+
+            // Si el mouse está cerca arriba
+            if (e.clientY <= 120) {
+                setShowNav(true)
+            } else {
+                setShowNav(false)
+            }
+        }
+
+        window.addEventListener("mousemove", handleMouseMove)
+
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove)
+        }
+
+    }, [])
+
     return (
         <>
-            <div className="my-5">
+            <motion.div
+                className="my-5"
+                initial={{ y: 0 }}
+                animate={{
+                    y: showNav ? 0 : -140
+                }}
+                transition={{
+                    duration: 0.5,
+                    ease: "easeInOut"
+                }}
+
+            >
                 <div className="w-75 mx-auto">
                     <div className="navbar navbar-expand-lg cont row p-4 rounded-4 d-flex justify-content-between align-items-center shadow-lg">
 
@@ -106,7 +142,7 @@ export const Nav = ({ onProblemaClick, onAcercadeClick, onAnimacionClick, onBene
                         </form>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

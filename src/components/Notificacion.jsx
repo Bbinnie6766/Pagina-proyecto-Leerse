@@ -24,8 +24,8 @@ export const Notificacion = () => {
                     <img src="/iconos/icono-comillas.png" className='comilla1' />
                 </div>
                 <div className='option d-flex justify-content-center rounded-top-pill'>
-                    <div className='container-icon d-flex align-items-center justify-content-center rounded-5 mt-3'>
-                        <img src="/iconos/icono-guardado.png" style={{ width: '30px' }} />
+                    <div className='container-icon d-flex align-items-center justify-content-center rounded-5 m-3'>
+                        <img src="/iconos/icono-guardado.png" style={{ width: '20px' }} />
                     </div>
                 </div>
             </motion.div>

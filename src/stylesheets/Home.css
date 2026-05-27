@@ -132,7 +132,9 @@
 /* #endregion */
 
 .portada {
+    
     height: 105vh;
+    z-index: -1;
     
     
     h1 {
